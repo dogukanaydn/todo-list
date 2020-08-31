@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: linear-gradient(63.18deg, #42ffff 0%, #ff42ff 100%);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+header {
+  font-size: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form button,
+form input {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  background: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form button {
+  background: #ff42ff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #ffc93c;
+  color: white;
+}
+
+form select {
+  margin-left: 20px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+}
+
+/* TodoList function css*/
+.todo-list {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  background: white;
+  min-width: 50vh;
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+li button {
+  flex: 1;
+  border: none;
+  background: w;
+  font-size: 2rem;
+}
+
+.todo {
+  display: flex;
+  margin-top: 10px;
+}
+
+.todo button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.completed {
+  background: #ff42ff;
+  color: white;
+}
+
+.deleted {
+  background: #42ffff;
+  color: white;
+}
+
+.todo button:hover {
+  background: #ffc93c;
 }
