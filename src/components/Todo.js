@@ -2,13 +2,16 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-export default function Todo() {
+export default function Todo(props) {
+  // Icons
   const check = <FontAwesomeIcon icon={faCheck} />;
   const trash = <FontAwesomeIcon icon={faTrash} />;
+  /////////
+  const { todo } = props;
 
   return (
     <div className="todo">
-      <li>This is the list</li>
+      <li>{todo.inputText} </li>
       <button className="completed" type="submit">
         <i>{check}</i>
       </button>

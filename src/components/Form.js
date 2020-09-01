@@ -6,10 +6,12 @@ import "../App.css";
 const plus = <FontAwesomeIcon icon={faPlusSquare} />;
 
 export default function Form(props) {
+  const { inputText, handleInputChange, handleSubmit } = props;
+
   return (
     <div>
-      <form>
-        <input type="text" />
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={inputText} onChange={handleInputChange} />
         <button type="submit">
           <i>{plus}</i>
         </button>
