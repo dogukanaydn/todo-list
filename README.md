@@ -1,6 +1,6 @@
-## Screenshot 
-![react-app-todo-list](images/app-screenshot.png)
+## Screenshot
 
+![react-app-todo-list](images/todo-list.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

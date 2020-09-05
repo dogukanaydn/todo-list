@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
   const [id, setId] = useState(1);
+  const [inputText, setInputText] = useState("");
+  const [status, setStatus] = useState("all");
+  const [todos, setTodos] = useState([]);
 
-  function handleInputChange(event) {
+  function handleInput(event) {
     setInputText(event.target.value);
   }
-
-  function changeId() {
+  function handleStatus(event) {
+    setStatus(event.target.value);
+  }
+  function handleId() {
     setId((id) => id + 1);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    changeId();
-    setTodos([...todos, { inputText, completed: false, id }]);
+    handleId();
+    setTodos([...todos, { id, inputText, status }]);
     setInputText("");
   }
 
@@ -28,12 +31,20 @@ function App() {
       <header>
         <h1>Todo List</h1>
       </header>
+
       <Form
         inputText={inputText}
-        handleInputChange={handleInputChange}
+        status={status}
+        handleInput={handleInput}
+        handleStatus={handleStatus}
         handleSubmit={handleSubmit}
       />
-      <TodoList todos={todos} />
+      <TodoList
+        todos={todos}
+        setStatus={setStatus}
+        setTodos={setTodos}
+        status={status}
+      />
     </div>
   );
 }
